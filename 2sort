@@ -1,0 +1,14 @@
+function sortPeople(names, heights) {
+    let people = names.map((name, index) => ({ name: name, height: heights[index] }));
+    people.sort((a, b) => b.height - a.height);
+    let sortedNames = people.map(person => person.name);
+    return sortedNames;
+}
+
+let names1 = ["Mary", "John", "Emma"];
+let heights1 = [180, 165, 170];
+console.log(sortPeople(names1, heights1)); 
+
+let names2 = ["Alice", "Bob", "Bob"];
+let heights2 = [155, 185, 150];
+console.log(sortPeople(names2, heights2)); 

@@ -1,0 +1,29 @@
+function removeElement(nums, val) {
+    let k = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== val) {
+            nums[k++] = nums[i];
+        }
+    }
+
+    return k;
+}
+
+let nums1 = [3, 2, 2, 3];
+let val1 = 3;
+let expectedNums1 = [2, 2];
+let k1 = removeElement(nums1, val1);
+console.assert(k1 === expectedNums1.length, `Expected ${expectedNums1.length}, but got ${k1}`);
+for (let i = 0; i < k1; i++) {
+    console.assert(nums1[i] === expectedNums1[i], `At index ${i}, expected ${expectedNums1[i]}, but got ${nums1[i]}`);
+}
+
+let nums2 = [0, 1, 2, 2, 3, 0, 4, 2];
+let val2 = 2;
+let expectedNums2 = [0, 1, 3, 0, 4];
+let k2 = removeElement(nums2, val2);
+console.assert(k2 === expectedNums2.length, `Expected ${expectedNums2.length}, but got ${k2}`);
+for (let i = 0; i < k2; i++) {
+    console.assert(nums2[i] === expectedNums2[i], `At index ${i}, expected ${expectedNums2[i]}, but got ${nums2[i]}`);
+}
